@@ -1,20 +1,10 @@
 <?php
-$studentName = "";
-$studentId = "";
-$course = "";
+    $average = null;
+    $status = "";
 
-$grade1 = "";
-$grade2 = "";
-$grade3 = "";
-
-$average = null;
-$status = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $studentName = htmlspecialchars($_POST["student_name"]);
-    $studentId = htmlspecialchars($_POST["student_id"]);
-    $course = htmlspecialchars($_POST["course"]);
+    $studentName = trim($_POST["student_name"]);
+    $studentId = trim($_POST["student_id"]);
+    $course = trim($_POST["course"]);
 
     $grade1 = floatval($_POST["grade1"]);
     $grade2 = floatval($_POST["grade2"]);
@@ -27,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $status = "FAILED";
     }
-}
 ?>
 
 <!DOCTYPE html>
